@@ -1,2 +1,3 @@
-# sample-forge-app
-Sample Forge app to test Atlassian Forge Dev Tools.
+# Sample Forge app
+
+Sample Forge app to test Atlassian Forge DevTools.

@@ -1,0 +1,38 @@
+{
+  "name": "sample-forge-app",
+  "version": "1.0.0",
+  "description": "Sample Forge app",
+  "license": "GPL-3.0-only",
+  "author": "João Brilhante",
+  "homepage": "https://github.com/JoaoBrlt/sample-forge-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoBrlt/sample-forge-app.git"
+  },
+  "bugs": "https://github.com/JoaoBrlt/sample-forge-app/issues",
+  "scripts": {
+    "login": "forge login",
+    "logout": "forge logout",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "deploy:dev": "forge deploy",
+    "install:dev": "forge install --confirm-scopes --product Confluence --license active",
+    "upgrade:dev": "forge install --upgrade --confirm-scopes --product Confluence --license active",
+    "tunnel:dev": "forge tunnel"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=10"
+  },
+  "dependencies": {
+    "@forge/bridge": "^5.14.1",
+    "@forge/react": "^11.13.1",
+    "@forge/resolver": "^1.7.1",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@forge/cli": "^12.16.0",
+    "prettier": "^3.8.1"
+  }
+}

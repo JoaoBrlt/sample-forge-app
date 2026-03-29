@@ -1,0 +1,8 @@
+# pnpm configuration, see https://pnpm.io/settings
+
+# Allowed scripts
+allowBuilds:
+  "@forge/cli": true
+  cloudflared: true
+  keytar: true
+  iframe-resizer: true

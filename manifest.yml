@@ -1,0 +1,50 @@
+app:
+  id: ari:cloud:ecosystem::app/159994c0-db22-4e33-9208-dd0ff937f8cd
+  runtime:
+    name: nodejs24.x
+    architecture: arm64
+    memoryMB: 256
+
+remotes:
+  - key: remote
+    baseUrl: https://jsonplaceholder.typicode.com
+    operations:
+      - compute
+      - fetch
+      - other
+
+modules:
+  endpoint:
+    - key: remote-endpoint
+      remote: remote
+
+  confluence:spacePage:
+    - key: function-invocations
+      resource: main
+      render: native
+      resolver:
+        function: resolver
+      title: Functions invocations
+      route: function-invocations
+      unlicensedAccess:
+        - unlicensed
+        - anonymous
+
+    - key: remote-invocations
+      resource: main
+      render: native
+      resolver:
+        endpoint: remote-endpoint
+      title: Remote invocations
+      route: remote-invocations
+      unlicensedAccess:
+        - unlicensed
+        - anonymous
+
+  function:
+    - key: resolver
+      handler: index.handler
+
+resources:
+  - key: main
+    path: src/frontend/index.jsx
